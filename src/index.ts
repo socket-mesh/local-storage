@@ -1,38 +1,38 @@
 export class LocalStorage implements Storage {
 	private readonly _data: {[ key: string]: string};
 
-  constructor() {
+	constructor() {
 		this._data = {};
-  }
+	}
 
-  getItem(key: string) {
-    if (this._data.hasOwnProperty(key)) {
-      return String(this._data[key]);
-    }
-    return null;
-  }
+	getItem(key: string) {
+		if (this._data.hasOwnProperty(key)) {
+			return String(this._data[key]);
+		}
+		return null;
+	}
 
-  setItem(key: string, val: any) {
-    this._data[key] = String(val);
-  }
+	setItem(key: string, val: any) {
+		this._data[key] = String(val);
+	}
 
-  removeItem(key: string) {
-    delete this._data[key];
-  }
+	removeItem(key: string) {
+		delete this._data[key];
+	}
 
-  clear() {
+	clear() {
 		const self = this;
 
-    Object.keys(self._data).forEach(function (key) {
-      self._data[key] = undefined;
-      delete self._data[key];
-    });
-  }
+		Object.keys(self._data).forEach(function (key) {
+			self._data[key] = undefined;
+			delete self._data[key];
+		});
+	}
 
-  key(i: number): string {
-    i = i || 0;
-    return Object.keys(this._data)[i];
-  }
+	key(i: number): string {
+		i = i || 0;
+		return Object.keys(this._data)[i];
+	}
 
 	hasItem(key: string): boolean {
 		return this._data.hasOwnProperty(key);
