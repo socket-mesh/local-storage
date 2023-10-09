@@ -1,4 +1,4 @@
-import localStorage from "../src";
+import localStorage from "../src/index.js";
 import { beforeEach, describe, expect, it } from '@jest/globals';
 
 describe('StreamDemux', () => {
